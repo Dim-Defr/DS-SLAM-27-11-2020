@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Model.Business
 {
-    class Poste
+    public class Poste
     {
         private int id;
         private string nom;

@@ -26,7 +26,7 @@
                 <RowDefinition Height="15*"/>
             </Grid.RowDefinitions>
             <Label Name="labListJoueurs" Grid.Row="0" Content="Joueurs : " HorizontalAlignment="Center"/>
-            <ListBox x:Name="ListJoueursEquipe" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <ListBox x:Name="ListJoueursEquipe" ItemsSource="{Binding ListJoueur}" SelectedItem="{Binding SelectedJoueur}"  IsSynchronizedWithCurrentItem="True" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         </Grid>
         <Grid Name="IDJoueur" Grid.Column="2">
             <Grid.RowDefinitions>
@@ -43,9 +43,9 @@
                 <ColumnDefinition Width="2.5*"/>
             </Grid.ColumnDefinitions>
             <Label Content="Nom Joueur : " Grid.Row="0" Grid.Column="0" Margin="10" VerticalAlignment="Center"/>
-            <TextBox Name="EdNom" Grid.Row="0" Grid.Column="1" Margin="10"/>
+            <TextBox Name="EdNom" Text="{Binding Name}" Grid.Row="0" Grid.Column="1" Margin="10"/>
             <Label Content="Date de Naissance : " Grid.Row="1" Grid.Column="0" Margin="10" VerticalAlignment="Center" />
-            <DatePicker Name="dateNaiss" Grid.Column="1" HorizontalAlignment="Left" Margin="10" Grid.Row="1" VerticalAlignment="Center"/>
+            <DatePicker Name="dateNaiss" SelectedDate="{Binding Creation}" Grid.Column="1" HorizontalAlignment="Left" Margin="10" Grid.Row="1" VerticalAlignment="Center"/>
             <Label Content="Date d'Entrée : " Grid.Row="2" Grid.Column="0" Margin="10" VerticalAlignment="Center"/>
             <DatePicker Name="dateEntree" Grid.Column="1" HorizontalAlignment="Left" Margin="10" Grid.Row="2" VerticalAlignment="Center"/>
             <Label Content="Pays d'origine : " Grid.Row="3" Grid.Column="0" Margin="10" VerticalAlignment="Center" />

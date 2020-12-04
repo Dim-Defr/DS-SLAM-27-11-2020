@@ -15,9 +15,11 @@ namespace ClubfootApp.viewModel
     class viewModelJoueur : viewModelBase
     {
         private daoEquipe vmDaoEquipe;
+        
         //rajouter les autres dao
         private ICommand updateCommand;
         private ObservableCollection<Equipe> listEquipe;
+
 
         public ObservableCollection<Equipe> ListEquipes { get => listEquipe; set => listEquipe = value; }
         

@@ -16,7 +16,7 @@ namespace Model.Business
         public DateTime DateCreation { get => dateCreation; set => dateCreation = value; }
         
         
-
+ 
         public Equipe()
         {
             id = 0;

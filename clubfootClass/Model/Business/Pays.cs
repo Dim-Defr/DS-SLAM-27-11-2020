@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Model.Business
 {
-    class Pays
+    public class Pays
     {
         private int id;
         private string nom;

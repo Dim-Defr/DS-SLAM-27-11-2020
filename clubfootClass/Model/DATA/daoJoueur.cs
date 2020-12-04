@@ -1,10 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Data;
 using Model.Business;
 namespace Model.DATA
 {
-    class daoJoueur
+   public class daoJoueur
     {
+        private DBAL _mydbal;
+        private daoPays _myDaoPays;
+        private daoPoste _myDaoPoste;
+
+        public daoJoueur(DBAL UnDbal)
+        {
+            _mydbal = UnDbal;
+
+        }
+
+        public List<Joueur> SelectAll()
+        {
+            List<Joueur> lesJoueurs = new List<Joueur>();
+            foreach (DataRow DataR in _mydbal.SelectALL("joueur").Rows)
+            {
+                lesJoueurs.Add(new Joueur(
+                    (int)DataR["id"],
+                    (string)DataR["nom"],
+                    (DateTime)DataR["dateEntree"],
+                    (DateTime)DataR["dateNaissance"],
+                    (Pays)DataR["pays"],
+                    (Poste)DataR["poste"]
+
+                    ));
+            }
+            return lesJoueurs;
+        }
+
     }
 }
