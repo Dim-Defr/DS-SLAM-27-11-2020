@@ -75,6 +75,22 @@ namespace ClubfootApp.viewModel
             }
         }
 
+        public string Name
+        {
+
+            get => selectedJoueur.Nom;
+            set
+            {
+                if (SelectedJoueur.Nom != value)
+                {
+                    SelectedJoueur.Nom = value;
+                    //création d'un évènement si la propriété Name (bindée dans le XAML) change
+                    OnPropertyChanged("Name");
+                }
+            }
+        }
+
+        
 
         public viewModelJoueur(daoEquipe thedaoEquipe,daoJoueur thedaoJoueur,daoPays thedaoPays,daoPoste thedaoPoste)
            {
