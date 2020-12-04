@@ -23,10 +23,10 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         private DBAL thedbal;
-        private daoEquipe thedaoequipe;
-        private daoJoueur thedaojoueur;
-        private daoPays thedaopays;
-        private daoPoste thedaoposte;
+        private daoEquipe daoE;
+        private daoJoueur daoJ;
+        private daoPays daoPA;
+        private daoPoste daoPO;
         private List<Equipe> theequipe;
         private List<Joueur> thejoueur;
         private List<Pays> thepays;
@@ -39,10 +39,10 @@ namespace WpfApp1
            Globale.DataContext = new ClubfootApp.viewModel.viewModelJoueur(thedaoequipe,thedaojoueur,thedaopays,thedaoposte);
 
         }
-         public MainWindow()
-        {
-            InitializeComponent();
-        }
+        // public MainWindow()
+        //{
+        //    InitializeComponent();
+        //}
 
        
     }

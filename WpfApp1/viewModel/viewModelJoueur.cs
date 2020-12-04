@@ -36,8 +36,12 @@ namespace ClubfootApp.viewModel
         public ObservableCollection<Pays> ListPays { get => listPays; set => listPays = value; }
         public ObservableCollection<Poste> ListPostes { get => listPoste; set => listPoste = value; }
 
+        
+
         public Equipe SelectedEquipe
         {
+
+            
             get => selectedEquipe;
             set
             {
@@ -45,8 +49,28 @@ namespace ClubfootApp.viewModel
                 {
                     selectedEquipe = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
+                    ListJoueurs = new ObservableCollection<Joueur>(vmDaoJoueur.SelectByEquipe(selectedEquipe));
                     OnPropertyChanged("ListJoueurs");
                     
+                }
+            }
+        }
+
+        public Joueur SelectedJoueur
+        {
+            get => selectedJoueur;
+            set
+            {
+                if (selectedJoueur != value)
+                {
+                    selectedJoueur = value;
+                    //création d'un évènement si la propriété Name (bindée dans le XAML) change
+                    OnPropertyChanged("Name");
+                    OnPropertyChanged("Naiss");
+                    OnPropertyChanged("Entree");
+                    OnPropertyChanged("Origin");
+                    OnPropertyChanged("Poste");
+
                 }
             }
         }

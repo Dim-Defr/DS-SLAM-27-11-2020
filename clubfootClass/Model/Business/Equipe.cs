@@ -22,15 +22,18 @@ namespace Model.Business
             id = 0;
             nom = "";
             dateCreation = new DateTime();
+            List<Joueur> Joueur = new List<Joueur>();
 
         }
 
-        public Equipe(int unId, string UnNom, DateTime UneDatedeCreation)
+        public Equipe(int unId, string UnNom, DateTime UneDatedeCreation/*,List<Joueur> UnelisteJoueur*/)
         {
             id = unId;
             nom = UnNom;
             dateCreation = UneDatedeCreation;
             List<Joueur> Joueur = new List<Joueur>();
+            /* List<Joueur> Joueur = UnelisteJoueur;*/
+
         }
         public override string ToString()
         {

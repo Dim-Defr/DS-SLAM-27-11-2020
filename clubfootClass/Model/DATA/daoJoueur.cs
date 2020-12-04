@@ -17,7 +17,23 @@ namespace Model.DATA
             _myDaoPoste = UneDaoPoste;
 
         }
+        public List<Joueur> SelectByEquipe(Equipe UneEquipe)
+        {
+            List<Joueur> lesJoueurs = new List<Joueur>();
+            foreach (DataRow DataR in _mydbal.SelectByField("joueur","equipe = "+UneEquipe.Id).Rows)
+            {
+                lesJoueurs.Add(new Joueur(
+                    (int)DataR["id"],
+                    (string)DataR["nom"],
+                    (DateTime)DataR["dateEntree"],
+                    (DateTime)DataR["dateNaissance"],
+                    _myDaoPays.selectByID((int)DataR["pays"]),
+                    _myDaoPoste.selectByID((int)DataR["pays"])
 
+                    ));
+            }
+            return lesJoueurs;
+        }
         public List<Joueur> SelectAll()
         {
             List<Joueur> lesJoueurs = new List<Joueur>();

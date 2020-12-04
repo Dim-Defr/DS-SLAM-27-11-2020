@@ -8,14 +8,16 @@ namespace Model.DATA
     public class daoEquipe
     {
         private DBAL _mydbal;
+        private daoJoueur _myDaoJoueur;
         
 
         public daoEquipe(DBAL UnDBAL)
         {
             _mydbal = UnDBAL;
+            
 
 
-           
+
         }
         public  List<Equipe> SelectAll()
         {
@@ -26,6 +28,9 @@ namespace Model.DATA
                     (int)DataR["id"],
                     (string)DataR["nom"],
                     (DateTime)DataR["dateCreation"]
+                    
+                    
+
                     ));
             }
             return lesEquipes;
