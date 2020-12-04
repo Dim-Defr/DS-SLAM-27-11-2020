@@ -9,11 +9,13 @@ namespace clubfootConsole
         static void Main(string[] args)
         {
             DBAL MaBDD = new DBAL();//nouvel instance DBAL
+            daoPays daoPA = new daoPays(MaBDD);
+            daoPoste daoPO = new daoPoste(MaBDD);
             Console.WriteLine("Bonjour !");
 
 
             //Joueur
-            daoJoueur daoJ = new Model.DATA.daoJoueur(MaBDD);
+            daoJoueur daoJ = new daoJoueur(MaBDD,daoPA,daoPO);
 
             daoJ.SelectAll();
             foreach (Joueur item in daoJ.SelectAll())

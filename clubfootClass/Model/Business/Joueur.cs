@@ -41,5 +41,9 @@ namespace Model.Business
             pays = new Pays();
             poste = new Poste();
         }
+        public override string ToString()
+        {
+            return this.nom;
+        }
     }
 }

@@ -24,12 +24,19 @@ namespace WpfApp1
     {
         private DBAL thedbal;
         private daoEquipe thedaoequipe;
+        private daoJoueur thedaojoueur;
+        private daoPays thedaopays;
+        private daoPoste thedaoposte;
         private List<Equipe> theequipe;
+        private List<Joueur> thejoueur;
+        private List<Pays> thepays;
+        private List<Poste> theposte;
 
-        public MainWindow(daoEquipe thedaoequipe)
+
+        public MainWindow(daoEquipe thedaoequipe,daoJoueur thedaojoueur,daoPays thedaopays,daoPoste thedaoposte)
         {
             InitializeComponent();
-            Globale.DataContext = new ClubfootApp.viewModel.viewModelJoueur(thedaoequipe);
+           Globale.DataContext = new ClubfootApp.viewModel.viewModelJoueur(thedaoequipe,thedaojoueur,thedaopays,thedaoposte);
 
         }
          public MainWindow()

@@ -4,7 +4,7 @@ using System.Data;
 using Model.Business;
 namespace Model.DATA
 {
-    class daoPays
+    public class daoPays
     {
 
         private DBAL _mydbal;

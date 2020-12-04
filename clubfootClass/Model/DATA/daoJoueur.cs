@@ -10,9 +10,11 @@ namespace Model.DATA
         private daoPays _myDaoPays;
         private daoPoste _myDaoPoste;
 
-        public daoJoueur(DBAL UnDbal)
+        public daoJoueur(DBAL UnDbal,daoPays UneDaoPays,daoPoste UneDaoPoste)
         {
             _mydbal = UnDbal;
+            _myDaoPays = UneDaoPays;
+            _myDaoPoste = UneDaoPoste;
 
         }
 
@@ -26,8 +28,8 @@ namespace Model.DATA
                     (string)DataR["nom"],
                     (DateTime)DataR["dateEntree"],
                     (DateTime)DataR["dateNaissance"],
-                    (Pays)DataR["pays"],
-                    (Poste)DataR["poste"]
+                    _myDaoPays.selectByID((int)DataR["pays"]),
+                    _myDaoPoste.selectByID((int)DataR["pays"])
 
                     ));
             }
